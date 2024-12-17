@@ -13,7 +13,7 @@ const Header = () => {
             <img
               src="images/logo.png"
               alt="Mi Semilla Negra"
-              className="h-28 w-auto object-contain"
+              className="h-32 w-auto object-contain"
             />
           </a>
 

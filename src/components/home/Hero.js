@@ -1,37 +1,46 @@
-import { Link } from 'react-router-dom';
+import React from 'react';
 
 const Hero = () => {
   return (
-    <div className="relative h-[80vh] min-h-[600px] w-full">
-      {/* Background Image */}
+    <div className="relative h-[55vh] min-h-[600px]">
+      {/* Background Container with Image and Overlay */}
       <div className="absolute inset-0">
-        <div className="w-full h-full">
-          <img
-            src="/images/hero-bg.jpg"
-            alt="Mi Semilla Negra - Salsas Orientales"
-            className="w-full h-full object-cover brightness-[0.6]"
-          />
-        </div>
+        {/* Image */}
+        <img
+          src="images/hero-bg.jpg"
+          alt="Mi Semilla Negra - Salsas Orientales"
+          className="absolute inset-0 w-full h-full object-cover brightness-75"
+        />
+        {/* Overlays */}
+        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/30 to-transparent" />
       </div>
 
-      {/* Content Overlay */}
-      <div className="relative h-full w-full flex items-center">
-        <div className="container">
-          <div className="max-w-4xl">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
-              Salsas Orientales de Primera Calidad
+      {/* Content Container */}
+      <div className="relative h-full z-10 flex">
+        <div className="container mx-auto px-4 flex items-center pt-32"> {/* Aumentado el pt-32 para bajar más el contenido */}
+          <div className="max-w-3xl">
+            <h1 className="text-6xl font-bold mb-6">
+              <span className="text-neutral block">
+                Salsas Orientales de
+              </span>
+              <span className="text-secondary">
+                Primera Calidad
+              </span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-100 mb-8 max-w-2xl">
-              Descubre el auténtico sabor de la cocina oriental con nuestras salsas artesanales
+            <p className="text-xl text-neutral/90 mb-8 max-w-2xl">
+              Descubre el auténtico sabor de la cocina oriental con nuestras
+              salsas artesanales
             </p>
-            <Link 
-              to="#productos"
-              className="inline-block bg-black text-white px-8 py-3 rounded-md 
-                       text-lg font-medium hover:bg-opacity-90 transition-all
-                       border-2 border-transparent hover:border-white"
+            <a 
+              href="#productos" 
+              className="inline-block px-8 py-3 text-lg
+                       border-2 border-neutral text-neutral
+                       hover:bg-secondary hover:border-secondary
+                       transition-all duration-300 rounded-lg"
             >
               Ver Productos
-            </Link>
+            </a>
           </div>
         </div>
       </div>
