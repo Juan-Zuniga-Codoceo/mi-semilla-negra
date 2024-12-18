@@ -101,7 +101,7 @@ const ProductCard = ({ product }) => {
 
 const Products = () => {
   return (
-    <section id="productos" className="py-16 bg-neutral-light">
+    <section id="productos" className="py-16 bg-white"> 
       <div className="container mx-auto px-4">
         <SectionTitle>Nuestros Productos</SectionTitle>
         
