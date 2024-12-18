@@ -7,6 +7,7 @@ import {
   DialogTitle,
 } from "../components/ui/dialog";
 import { products } from '../data/products';
+import SectionTitle from '../components/ui/SectionTitle';
 
 const ProductCard = ({ product }) => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -102,9 +103,7 @@ const Products = () => {
   return (
     <section id="productos" className="py-16 bg-neutral-light">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">
-          Nuestros Productos
-        </h2>
+        <SectionTitle>Nuestros Productos</SectionTitle>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product) => (
