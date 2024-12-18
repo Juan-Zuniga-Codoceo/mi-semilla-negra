@@ -122,7 +122,7 @@ const TestimonialCarousel = () => {
 
 const Testimonials = () => {
   return (
-    <section className="py-16 bg-white">
+    <section id="testimonios" className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <SectionTitle>Testimonios</SectionTitle>
         <TestimonialCarousel />

@@ -73,14 +73,7 @@ const ProductCard = ({ product }) => {
               </div>
 
               <div className="pt-4 space-y-3">
-                <button 
-                  className="w-full px-8 py-3 
-                           bg-secondary text-white 
-                           hover:bg-secondary-dark
-                           transition-all duration-300 rounded-lg"
-                >
-                  Ver Recetas
-                </button>
+                
                 <button 
                   className="w-full px-8 py-3
                            border-2 border-secondary text-secondary

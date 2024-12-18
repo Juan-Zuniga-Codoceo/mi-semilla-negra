@@ -19,9 +19,9 @@ const Header = () => {
 
           {/* Navigation Links - Desktop */}
           <div className="hidden md:flex items-center space-x-12">
-            <NavLink href="/nosotros">Nosotros</NavLink>
+            <NavLink href="/nosotros">Inicio</NavLink>
             <NavLink href="/productos">Productos</NavLink>
-            <NavLink href="/recetas">Recetas</NavLink>
+            <NavLink href="/productos">Testimonios</NavLink>   
             <NavLink href="/contacto">Contacto</NavLink>
           </div>
 
@@ -54,13 +54,13 @@ const Header = () => {
           <div className="md:hidden border-t border-neutral-dark">
             <div className="flex flex-col py-6 space-y-6">
               <MobileNavLink href="/nosotros" onClick={() => setIsMobileMenuOpen(false)}>
-                Nosotros
+                Inicio
               </MobileNavLink>
               <MobileNavLink href="/productos" onClick={() => setIsMobileMenuOpen(false)}>
                 Productos
               </MobileNavLink>
-              <MobileNavLink href="/recetas" onClick={() => setIsMobileMenuOpen(false)}>
-                Recetas
+              <MobileNavLink href="/productos" onClick={() => setIsMobileMenuOpen(false)}>
+                Testimonios
               </MobileNavLink>
               <MobileNavLink href="/contacto" onClick={() => setIsMobileMenuOpen(false)}>
                 Contacto
