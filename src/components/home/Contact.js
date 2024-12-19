@@ -1,7 +1,4 @@
-// src/components/home/Contact.js
 import React, { useState } from 'react';
-import emailjs from '@emailjs/browser';
-import SectionTitle from '../ui/SectionTitle';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -11,12 +8,10 @@ const Contact = () => {
     message: ''
   });
 
-  const [status, setStatus] = useState({
-    type: '',
-    message: ''
-  });
-
   const [loading, setLoading] = useState(false);
+
+  // Número de WhatsApp del cliente
+  const phoneNumber = '+56940413646'; // Reemplazar con el número real
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,64 +21,41 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    setStatus({ type: '', message: '' });
 
-    try {
-      await emailjs.send(
-        'YOUR_SERVICE_ID', // Reemplazar con tu Service ID de EmailJS
-        'YOUR_TEMPLATE_ID', // Reemplazar con tu Template ID de EmailJS
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-        },
-        'YOUR_PUBLIC_KEY' // Reemplazar con tu Public Key de EmailJS
-      );
+    // Formatear el mensaje para WhatsApp
+    const message = `*Nuevo Contacto - Mi Semilla Negra*
+    
+*Nombre:* ${formData.name}
+*Email:* ${formData.email}
+*Asunto:* ${formData.subject}
+*Mensaje:* ${formData.message}`;
 
-      setStatus({
-        type: 'success',
-        message: '¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.'
-      });
-      
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
+    // Crear el enlace de WhatsApp
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
-    } catch (error) {
-      setStatus({
-        type: 'error',
-        message: 'Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.'
-      });
-    } finally {
-      setLoading(false);
-    }
+    // Abrir WhatsApp en nueva pestaña
+    window.open(whatsappUrl, '_blank');
+
+    // Limpiar el formulario
+    setFormData({
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    });
+
+    setLoading(false);
   };
 
   return (
-    <section id="contacto" className="py-16 bg-neutral-light"> {/* Añadido id="contacto" */}
+    <section id="contacto" className="py-16 bg-neutral-light">
       <div className="container mx-auto px-4">
-        <SectionTitle>Contacto</SectionTitle>
+        <h2 className="text-3xl font-bold text-center mb-12">Contacto</h2>
         
         <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-8">
-          {status.message && (
-            <div 
-              className={`mb-6 p-4 rounded-lg ${
-                status.type === 'success' 
-                  ? 'bg-green-50 text-green-800 border border-green-200' 
-                  : 'bg-red-50 text-red-800 border border-red-200'
-              }`}
-            >
-              {status.message}
-            </div>
-          )}
-
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>

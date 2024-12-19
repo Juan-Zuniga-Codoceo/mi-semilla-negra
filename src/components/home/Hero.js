@@ -2,7 +2,7 @@ import React from 'react';
 
 const Hero = () => {
   return (
-    <div className="relative h-[55vh] min-h-[600px]">
+    <div id="inicio" className="relative h-[55vh] min-h-[600px]">
       {/* Background Container with Image and Overlay */}
       <div className="absolute inset-0">
         {/* Image */}
