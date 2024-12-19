@@ -30,7 +30,7 @@ const Header = () => {
             <SocialLink href="https://facebook.com" aria-label="Facebook">
               <Facebook className="w-7 h-7" />
             </SocialLink>
-            <SocialLink href="https://instagram.com" aria-label="Instagram">
+            <SocialLink href="https://www.instagram.com/misemillanegra.cl/" aria-label="Instagram">
               <Instagram className="w-7 h-7" />
             </SocialLink>
           </div>

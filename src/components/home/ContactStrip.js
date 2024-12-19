@@ -13,7 +13,7 @@ const ContactStrip = () => {
           
           <div className="flex items-center gap-4">
             <a 
-              href="https://wa.me/+56912345678" 
+              href="https://wa.me/+56937062068" 
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 bg-white hover:bg-gray-100 px-6 py-3 rounded-lg transition-all duration-300"
@@ -23,7 +23,7 @@ const ContactStrip = () => {
             </a>
             
             <a 
-              href="https://instagram.com/misemillanegra" 
+              href="https://www.instagram.com/misemillanegra.cl/" 
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 bg-white hover:bg-gray-100 px-6 py-3 rounded-lg transition-all duration-300"

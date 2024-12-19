@@ -23,8 +23,7 @@ const Footer = () => {
                 className="h-32 w-auto object-contain -mt-4" // Aumentado tamaño y ajustado margen
               />
               <p className="text-gray-600 leading-relaxed">
-                Descubre el auténtico sabor de la cocina oriental con nuestras
-                salsas artesanales de primera calidad.
+                Descubre el sabor de nuestro brebaje ancestral.
               </p>
             </div>
           </div>
@@ -69,7 +68,7 @@ const Footer = () => {
             </h3>
             <div className="space-y-4">
               <p className="text-gray-600">Email: info@misemillanegra.com</p>
-              <p className="text-gray-600">Teléfono: +56 9 1234 5678</p>
+              <p className="text-gray-600">Teléfono: +56 9 3706 2068</p>
               <div className="flex gap-4 pt-2">
                 <a
                   href="https://facebook.com"
@@ -81,7 +80,7 @@ const Footer = () => {
                   <Facebook className="w-6 h-6" />
                 </a>
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/misemillanegra.cl/"
                   className="text-gray-600 hover:text-secondary transition-colors duration-300"
                   aria-label="Instagram"
                   target="_blank"
