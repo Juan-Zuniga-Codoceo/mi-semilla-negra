@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SectionTitle from '../ui/SectionTitle';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -12,7 +13,7 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
 
   // Número de WhatsApp del cliente
-  const phoneNumber = '56971865279';
+  const phoneNumber = '+56937062068';
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -56,7 +57,7 @@ const Contact = () => {
   return (
     <section id="contacto" className="py-16 bg-neutral-light">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">Contacto</h2>
+        <SectionTitle>Contacto</SectionTitle>
         
         <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-8">
           <form onSubmit={handleSubmit} className="space-y-6">
