@@ -1,17 +1,28 @@
 // src/pages/Products.js
 /*
 import React from 'react';
+import { MessageCircle, Instagram } from 'lucide-react';
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
 } from "../components/ui/dialog";
-import { products } from '../data/products';
 import SectionTitle from '../components/ui/SectionTitle';
+import { products } from '../data/products';
 
 const ProductCard = ({ product }) => {
   const [isOpen, setIsOpen] = React.useState(false);
+
+  if (!product) return null;
+
+  // WhatsApp config
+  const phoneNumber = '+56937062068'; 
+  const message = `Hola! Me gustaría obtener más información sobre ${product.name} ${product.size}`;
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  
+  // Instagram URL
+  const instagramUrl = "https://www.instagram.com/misemillanegra.cl/";
 
   return (
     <>
@@ -74,16 +85,31 @@ const ProductCard = ({ product }) => {
               </div>
 
               <div className="pt-4 space-y-3">
+                <a 
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full px-8 py-3 flex items-center justify-center gap-2
+                           bg-secondary text-white
+                           hover:bg-secondary-dark
+                           transition-all duration-300 rounded-lg"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  Contactar por WhatsApp
+                </a>
                 
-                <button 
-                  className="w-full px-8 py-3
+                <a 
+                  href={instagramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full px-8 py-3 flex items-center justify-center gap-2
                            border-2 border-secondary text-secondary
                            hover:bg-secondary hover:text-white
                            transition-all duration-300 rounded-lg"
-                  onClick={() => setIsOpen(false)}
                 >
-                  Contactar
-                </button>
+                  <Instagram className="w-5 h-5" />
+                  Seguir en Instagram
+                </a>
               </div>
             </div>
           </div>
@@ -111,11 +137,8 @@ const Products = () => {
 
 export default Products;*/
 
-
-
-// src/pages/Products.js
 import React from 'react';
-import { MessageCircle, Instagram } from 'lucide-react';
+import { MessageCircle, Instagram, X } from 'lucide-react';
 import {
   Dialog,
   DialogContent,
@@ -169,7 +192,16 @@ const ProductCard = ({ product }) => {
 
       {/* Modal */}
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent>
+        <DialogContent className="relative">
+          {/* Botón de cerrar */}
+          <button
+            onClick={() => setIsOpen(false)}
+            className="absolute right-4 top-4 p-2 rounded-full hover:bg-gray-100 transition-colors duration-200"
+            aria-label="Cerrar"
+          >
+            <X className="w-6 h-6 text-gray-500" />
+          </button>
+
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold text-primary">
               {product.name}
