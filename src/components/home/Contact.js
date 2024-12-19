@@ -4,6 +4,7 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     subject: '',
     message: ''
   });
@@ -11,7 +12,7 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
 
   // Número de WhatsApp del cliente
-  const phoneNumber = '+56940413646'; // Reemplazar con el número real
+  const phoneNumber = '56971865279';
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -30,6 +31,7 @@ const Contact = () => {
     
 *Nombre:* ${formData.name}
 *Email:* ${formData.email}
+*Teléfono:* ${formData.phone}
 *Asunto:* ${formData.subject}
 *Mensaje:* ${formData.message}`;
 
@@ -43,6 +45,7 @@ const Contact = () => {
     setFormData({
       name: '',
       email: '',
+      phone: '',
       subject: '',
       message: ''
     });
@@ -89,22 +92,39 @@ const Contact = () => {
                   disabled={loading}
                 />
               </div>
-            </div>
 
-            <div>
-              <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
-                Asunto
-              </label>
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-secondary"
-                required
-                disabled={loading}
-              />
+              <div>
+                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                  Teléfono
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-secondary"
+                  required
+                  disabled={loading}
+                  placeholder="+56 9 XXXX XXXX"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
+                  Asunto
+                </label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-secondary"
+                  required
+                  disabled={loading}
+                />
+              </div>
             </div>
 
             <div>
